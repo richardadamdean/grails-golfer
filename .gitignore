@@ -441,3 +441,14 @@ target/test-reports/html/stylesheet.css
 target/test-reports/plain/TEST-unit-spock-com.richardadamdean.golfer.RoundSpec-err.txt
 target/test-reports/plain/TEST-unit-spock-com.richardadamdean.golfer.RoundSpec-out.txt
 target/test-reports/plain/TEST-unit-spock-com.richardadamdean.golfer.RoundSpec.txt
+target/test-reports/TEST-integration-integration-com.richardadamdean.golfer.RoundServiceTests.xml
+target/test-reports/TEST-unit-unit-com.richardadamdean.golfer.RoundTests.xml
+target/test-reports/html/com/richardadamdean/golfer/0_RoundServiceTests.html
+target/test-reports/html/com/richardadamdean/golfer/1_RoundSpec.html
+target/test-reports/html/com/richardadamdean/golfer/2_RoundTests.html
+target/test-reports/plain/TEST-integration-integration-com.richardadamdean.golfer.RoundServiceTests-err.txt
+target/test-reports/plain/TEST-integration-integration-com.richardadamdean.golfer.RoundServiceTests-out.txt
+target/test-reports/plain/TEST-integration-integration-com.richardadamdean.golfer.RoundServiceTests.txt
+target/test-reports/plain/TEST-unit-unit-com.richardadamdean.golfer.RoundTests-err.txt
+target/test-reports/plain/TEST-unit-unit-com.richardadamdean.golfer.RoundTests-out.txt
+target/test-reports/plain/TEST-unit-unit-com.richardadamdean.golfer.RoundTests.txt
