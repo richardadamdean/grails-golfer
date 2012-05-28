@@ -1,9 +1,16 @@
 Grails Golfer
 -------------
 
-A test-bed for playing with Groovy & Grails and other related technologies.
+A test-bed for playing with Groovy & Grails and other related technologies. There's no real functionality here, just some basic domain models for modelling a fictional golf app and a bunch of experiments with different testing frameworks.
 
+Run the app
+    grails run-app
 
+Run all tests
+    grails -Dserver.port=8090 test-app -echoOut
+
+Run functional tests, force use of chrome
+    grails -Dgeb.env=chrome -Dserver.port=8090 test-app -functional -echoOut
 
 Grails Notes
 ------------
@@ -19,11 +26,11 @@ Use '-echoOut' to log messages in test to console i.e. test-app -echoOut
 Unit Testing
 ------------
 
-  test-app unit: com.richardadamdean.Trip - run a single unit test.
+    test-app unit: com.richardadamdean.Trip - run a single unit test.
 
 http://code.google.com/p/spock/ - BDD Specs
 
-  test-app :spock - run only Spock specs (spock specs will also be picked up as part of the full test-app suite)
+    test-app :spock - run only Spock specs (spock specs will also be picked up as part of the full test-app suite)
 
 Functional Testing
 ------------------
@@ -37,7 +44,7 @@ Nice simple example grails app with Geb & Spock integration https://github.com/g
 
 To run func tests on a different port:
 
-  grails -Dgeb.env=chrome -Dserver.port=8090 test-app -functional 
+    grails -Dgeb.env=chrome -Dserver.port=8090 test-app -functional 
 
 Cucumber
 --------
@@ -48,7 +55,7 @@ https://github.com/cucumber/cucumber-jvm
 
 Run using: 
 
-  test-app :cucumber
+    test-app :cucumber
 
 https://github.com/hauner/grails-cucumber/wiki/Testing-Grails-with-Cucumber-and-Geb - 
 
@@ -77,7 +84,7 @@ Cheatsheet
 
 Create a new Grails app
   
-  grails create-app my-project
+    grails create-app my-project
 
 List a classes persistent properties: 
 
