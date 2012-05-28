@@ -542,3 +542,9 @@ web-app/selenium/core/xpath/javascript-xpath-0.1.11.js
 web-app/selenium/core/xpath/util.js
 web-app/selenium/core/xpath/xmltoken.js
 web-app/selenium/core/xpath/xpath.js
+chromedriver.log
+*.class
+target/test-reports/geb/com/richardadamdean/golfer/RoundsSpec/001-001-should show no rows when there are no rounds-end.html
+target/test-reports/geb/com/richardadamdean/golfer/RoundsSpec/001-001-should show no rows when there are no rounds-end.png
+target/test-reports/geb/com/richardadamdean/golfer/RoundsSpec/002-001-should show rows of existing rounds-end.html
+target/test-reports/geb/com/richardadamdean/golfer/RoundsSpec/002-001-should show rows of existing rounds-end.png

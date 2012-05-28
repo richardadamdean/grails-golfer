@@ -7,28 +7,42 @@ import com.richardadamdean.golfer.pages.*
 import grails.test.mixin.TestFor
 import geb.spock.GebSpec
 
-@Stepwise
+//@Stepwise
 class RoundsSpec extends GebReportingSpec {
 
-  def "there are no rounds"() {
+  @Shared
+  def richard
 
-    setup:
-      new User(id: 1, name: "Richard", updated_at: new Date(), created_at: new Date(), handicap: 2).save(flush: true)
-      def course = new Course(id: 1, name: 'My Course', updated_at: new Date(), created_at: new Date())
-      course.save(validate: false)
-      def hole1 = new Hole(holeNumber: 10, course: course).save()
-      def hole2 = new Hole(holeNumber: 11, course: course).save()
-      course.holes = [hole1, hole2]
-      course.save()
+  @Shared
+  def course
 
+  def setupSpec(){
+    richard = new User(id: 1, name: "Richard", updated_at: new Date(), created_at: new Date(), handicap: 2).save(flush: true)
+    course = new Course(id: 1, name: 'My Course', updated_at: new Date(), created_at: new Date())
+    course.save(validate: false)
+    def hole1 = new Hole(holeNumber: 10, course: course).save()
+    def hole2 = new Hole(holeNumber: 11, course: course).save()
+    course.holes = [hole1, hole2]
+    course.save()
+  }
+
+  def "should show no rows when there are no rounds"() {
     when:
-      def round = Round.fromCourse(course.id, false)
+      to ListPage
 
     then:
-//      Round.count() == 1
-      round.handicap == 2
-      round.course == course
-      round.round_holes.size() == 2
+      rounds.size() == 0
+  }
+
+  def "should show rows of existing rounds"(){
+    setup:
+      new Round(user: richard, course: course, updated_at: new Date(), created_at: new Date()).save(flush: true)
+
+    when:
+      to ListPage
+
+    then:
+      rounds.size() == 1
   }
 
 }

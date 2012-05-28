@@ -8,12 +8,13 @@ class ListPage extends Page {
   static url = "round/list"
   static at = {title ==~ /Person List/}
 
-//  static content = {
+  static content = {
+    newRoundButton(to: CreatePage) { $('a', class: 'create')}
 //    newPersonButton(to: CreatePage) { $("a", text: "New Person") }
-//    peopleTable { $("div.content table", 0) }
+    roundList { $("div.content table", 0) }
 //    personRow { module PersonRow, personRows[it] }
-//    personRows(required: false) { peopleTable.find("tbody").find("tr") }
-//  }
+    rounds(required: false) { roundList.find("tbody").find("tr") }
+  }
 }
 
 class PersonRow extends Module {
