@@ -1,7 +1,5 @@
 dataSource {
     pooled = true
-//    driverClassName = "org.h2.Driver"
-//    username = "sa"
     driverClassName="org.sqlite.JDBC"
     username = ""
     password = ""
@@ -15,11 +13,9 @@ hibernate {
 environments {
     development {
         dataSource {
-            dbCreate = "" //"create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:sqlite:/Users/richard/Work/dius/grails/golfer/db/development.sqlite3"
+            dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
+            url = "jdbc:sqlite:db/development.sqlite3"
             dialect = "dialect.SQLiteDialect"
-
-//            url = "jdbc:h2:mem:devDb;MVCC=TRUE"
         }
     }
     test {

@@ -11,19 +11,7 @@ class ListPage extends Page {
   static content = {
     newRoundButton(to: CreatePage) { $('a', class: 'create')}
     roundList { $("div.content table", 0) }
-//    personRow { module PersonRow, personRows[it] }
     rounds(required: false) { roundList.find("tbody").find("tr") }
   }
 }
 
-class PersonRow extends Module {
-//  static content = {
-//    cell { $("td", it) }
-//    cellText { cell(it).text() }
-//    cellHrefText{ cell(it).find('a').text() }
-//    enabled { Boolean.valueOf(cellHrefText(0)) }
-//    firstName { cellText(1) }
-//    lastName { cellText(2) }
-//    showLink(to: ShowPage) { cell(0).find("a") }
-//  }
-}

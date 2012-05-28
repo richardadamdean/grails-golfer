@@ -7,7 +7,7 @@ import com.richardadamdean.golfer.pages.*
 import grails.test.mixin.TestFor
 import geb.spock.GebSpec
 
-//@Stepwise
+@Stepwise // runs through each test sequentially, not rolling back changes between steps
 class RoundsSpec extends GebReportingSpec {
 
   @Shared
@@ -35,19 +35,7 @@ class RoundsSpec extends GebReportingSpec {
       at ListPage
   }
 
-  def "should show rows of existing rounds"(){
-    setup:
-      new Round(user: richard, course: course, updated_at: new Date(), created_at: new Date()).save(flush: true)
-
-    when:
-      to ListPage
-
-    then:
-      rounds.size() == 1
-  }
-
-  def "should begin the round creation"(){
-
+  def "should create a round using the specified handicap"(){
     when:
       to ListPage
       newRoundButton.click()
@@ -56,6 +44,15 @@ class RoundsSpec extends GebReportingSpec {
 
     then:
       at ShowPage
+      handicap.text() == '18'
+  }
+
+   def "should show rows of existing rounds"(){
+    when:
+      to ListPage
+
+    then:
+      rounds.size() == 1
   }
 
 }

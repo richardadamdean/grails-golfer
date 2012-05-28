@@ -54,7 +54,6 @@ grails.project.dependency.resolution = {
 
         test ":spock:0.6"
         test ":geb:0.7.0"
-//        test ":geb:0.6.3"
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0"
         //runtime ":cached-resources:1.0"
