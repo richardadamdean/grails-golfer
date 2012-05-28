@@ -4,10 +4,11 @@ import geb.Page
 
 class CreatePage extends Page{
 
-  static at = {
-    heading.text() ==~ /Create Round/
+  static at = {title == /Create Round/}
+
+  static content = {
+    handicap{$('#handicap')}
+    createButton(to: ShowPage){$('#create')}
   }
-
-
 
 }

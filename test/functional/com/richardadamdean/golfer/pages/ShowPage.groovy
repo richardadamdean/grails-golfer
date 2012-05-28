@@ -4,9 +4,7 @@ import geb.Page
 
 class ShowPage extends Page {
 
-  static at = {
-    heading.text() ==~ /Show Round/
-  }
+  static at = {title == /Show Round/}
 
 
 }

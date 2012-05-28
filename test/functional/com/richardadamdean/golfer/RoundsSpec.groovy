@@ -32,6 +32,7 @@ class RoundsSpec extends GebReportingSpec {
 
     then:
       rounds.size() == 0
+      at ListPage
   }
 
   def "should show rows of existing rounds"(){
@@ -43,6 +44,18 @@ class RoundsSpec extends GebReportingSpec {
 
     then:
       rounds.size() == 1
+  }
+
+  def "should begin the round creation"(){
+
+    when:
+      to ListPage
+      newRoundButton.click()
+      handicap << "18"
+      createButton.click()
+
+    then:
+      at ShowPage
   }
 
 }
